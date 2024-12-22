@@ -32,10 +32,10 @@ public class Author {
 //    )
     private Integer id;
 
-    @Column(
-            name = "f_name",
-            length = 35
-    )
+//    @Column(
+//            name = "f_name",
+//            length = 35
+//    )
     private String firstName;
 
     private String lastName;
