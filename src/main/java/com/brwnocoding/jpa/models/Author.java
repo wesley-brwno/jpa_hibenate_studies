@@ -1,15 +1,20 @@
 package com.brwnocoding.jpa.models;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.*;
 
 import java.time.LocalDateTime;
+
+
 
 @Data
 @Entity
 @NoArgsConstructor
-//@Table(name = "AUTHOR_TBL")
+@AllArgsConstructor
+@Builder
 public class Author {
 
     @Id
@@ -48,10 +53,10 @@ public class Author {
 
     private int age;
 
-    @Column(
-            updatable = false,
-            nullable = false
-    )
+//    @Column(
+//            updatable = false,
+//            nullable = false
+//    )
     private LocalDateTime createdAt;
 
     @Column(
