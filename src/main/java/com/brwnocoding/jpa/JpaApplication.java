@@ -1,7 +1,9 @@
 package com.brwnocoding.jpa;
 
 import com.brwnocoding.jpa.models.Author;
+import com.brwnocoding.jpa.models.Video;
 import com.brwnocoding.jpa.repositories.AuthorRepository;
+import com.brwnocoding.jpa.repositories.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,18 +16,24 @@ public class JpaApplication {
 		SpringApplication.run(JpaApplication.class, args);
 	}
 
-	//@Bean
+	@Bean
 	public CommandLineRunner commandLineRunner(
-		AuthorRepository repository
+		AuthorRepository repository,
+		VideoRepository videoRepository
 	) {
 		return args -> {
-			var author = Author.builder()
-					.firstName("wesley")
-					.lastName("bruno")
-					.age(24)
-					.email("wesley@email.com")
+//			var author = Author.builder()
+//					.firstName("wesley")
+//					.lastName("bruno")
+//					.age(24)
+//					.email("wesley@email.com")
+//					.build();
+//			repository.save(author);
+			var video = Video.builder()
+					.name("abc")
+					.lenght(5)
 					.build();
-			repository.save(author);
+			videoRepository.save(video);
 		};
 	}
 
